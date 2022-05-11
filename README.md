@@ -23,6 +23,8 @@ npm install --save-dev hardhat-gas-reporter
 npm install --save-dev @nomiclabs/hardhat-etherscan
 ```
 
+将 .env.example 重命名为 .env，然后填入其中各个字段的值
+
 verify成功后倒 https://rinkeby.etherscan.io/ 输入合约地址查看合约验证结果
 
 npm install
