@@ -15,15 +15,19 @@ async function main() {
 
   // We get the contract to deploy
   const UniNFT = await hre.ethers.getContractFactory('UniNFT');
+
+  const baseURI = 'ipfs://QmYqQgwjZiVeMaxqnRMhC3X3SsxYgTttek6TUNB5MiYnuT/';
+  const notRevealedURI = 'ipfs://QmV3Uc7JbXatJ3z8JxpgxXWvWc84jz1itd9USAYX3YN9Ee';
+
   // 替换成你的盲盒 ipfs 地址
   const uninft = await UniNFT.deploy(
-    'ipfs://QmbyUfWA5fuedutDAJ5CPs4ujVAfhPhn2Hi1URhAPwYJM7/',
-    'ipfs://QmbyUfWA5fuedutDAJ5CPs4ujVAfhPhn2Hi1URhAPwYJM7/'
+    baseURI,
+    notRevealedURI
   );
 
   await uninft.deployed();
 
-  console.log('Deployed to:', uninft.address);
+  console.log('UniNFT Deployed to:', uninft.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

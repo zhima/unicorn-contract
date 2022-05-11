@@ -3,6 +3,7 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "erc721a/contracts/ERC721A.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
 contract UniNFT is ERC721A, Ownable {
 
@@ -23,6 +24,7 @@ contract UniNFT is ERC721A, Ownable {
     uint256 public constant MAX_SUPPLY = 1000;
     uint256 public maxMintPerAddr = 5;
     uint256 public mintPrice = 0.02 ether;  // 0.02 ETH
+    bytes32 public merkleRoot;
 
     event Minted(address minter, uint256 amount);
     event StatusChanged(Status status);
@@ -58,11 +60,12 @@ contract UniNFT is ERC721A, Ownable {
         _mint(quantity);
     }
 
-    function whitelistMint(uint256 quantity) external payable eoaOnly {
+    function whitelistMint(bytes32[] calldata merkleProof, uint256 quantity) external payable eoaOnly {
         require(
             status == Status.Started || status == Status.WhiteListOnly,
             "UC-N: not able to mint yet"
         );
+        require(_whitelistVerify(merkleProof), "UC-N: Invalid merkle proof");
         _mint(quantity);
     }
 
@@ -95,6 +98,18 @@ contract UniNFT is ERC721A, Ownable {
 
     function numberMinted(address addr) public view returns (uint256) {
         return _numberMinted(addr);
+    }
+
+    function _whitelistVerify(bytes32[] calldata merkleProof) internal view returns (bool) {
+        return MerkleProof.verify(
+            merkleProof,
+            merkleRoot,
+            keccak256(abi.encodePacked(msg.sender))
+        );
+    }
+
+    function setMerkleRoot(bytes32 _MerkleRoot) public onlyOwner{
+        merkleRoot = _MerkleRoot;
     }
 
     //开盲盒

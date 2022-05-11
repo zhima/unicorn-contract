@@ -13,3 +13,22 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+Install dependencies:
+```shell
+npm install @openzeppelin/contracts
+npm install --save-dev erc721a 
+npm install --save-dev dotenv
+npm install --save-dev hardhat-gas-reporter
+npm install --save-dev @nomiclabs/hardhat-etherscan
+```
+
+verify成功后倒 https://rinkeby.etherscan.io/ 输入合约地址查看合约验证结果
+
+npm install
+sol
+deploy.js
+test
+.env
+hardhat.config.js
+real deploy
