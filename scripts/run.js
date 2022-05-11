@@ -1,0 +1,29 @@
+const { ethers } = require("ethers");
+const dotenv = require('dotenv');
+const ContractABI = require('./abi/UniNFT.json');
+
+dotenv.config();
+
+const runMain = async () => {
+  try {
+    const provider = new ethers.providers.JsonRpcProvider(process.env.INFURA_JSONRPC_ENDPOINT);
+    const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+
+    const contract = new ethers.Contract(process.env.CONTRACT_ADDR, ContractABI.abi, signer);
+    // const setStatusTx = await contract.setStatus(2);
+    // console.log('Set Status successfully, waiting for confirmation...');
+    // await setStatusTx.wait();
+    // console.log('Set Status confirmed!');
+    
+
+    const mintTx = await contract.mint(1, {value: ethers.utils.parseEther('0.1')});
+    console.log('Mint successfully, waiting for confirmation...');
+    await mintTx.wait();
+    console.log('Mint confirmed!');
+  } catch (error) {
+    console.log('error:', error);
+  }
+}
+
+runMain();
+

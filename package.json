@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node scripts/run.js",
     "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
     "deploy:rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby",
     "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mainnet",
