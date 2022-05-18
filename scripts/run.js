@@ -16,10 +16,18 @@ const runMain = async () => {
     // console.log('Set Status confirmed!');
     
 
-    const mintTx = await contract.mint(1, {value: ethers.utils.parseEther('0.1')});
-    console.log('Mint successfully, waiting for confirmation...');
-    await mintTx.wait();
-    console.log('Mint confirmed!');
+    // const mintTx = await contract.mint(1, {value: ethers.utils.parseEther('0.1')});
+    // console.log('Mint successfully, waiting for confirmation...');
+    // await mintTx.wait();
+    // console.log('Mint confirmed!');
+
+    // const flipRevealTx = await contract.flipReveal();
+    // console.log('flipReveal successfully, waiting for confirmation...');
+    // await flipRevealTx.wait();
+    // console.log('flipReveal confirmed!');
+
+    const tokenURI = await contract.tokenURI(12);
+    console.log('tokenURI:', tokenURI);
   } catch (error) {
     console.log('error:', error);
   }
