@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node scripts/run.js",
+    "start": "npx hardhat run scripts/run.js",
     "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
     "deploy:rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby",
     "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mainnet",
-    "verify:rinkeby": "npx hardhat verify 0xae9744195d562E3a733A704f9FfBE1c277b96AdD 'ipfs://QmYqQgwjZiVeMaxqnRMhC3X3SsxYgTttek6TUNB5MiYnuT/' 'ipfs://QmV3Uc7JbXatJ3z8JxpgxXWvWc84jz1itd9USAYX3YN9Ee' --network rinkeby",
+    "verify:rinkeby": "npx hardhat verify CONTRACT_ADDR BASE_URI NOT_REVEALED_URI --network rinkeby",
     "verify:mainnet": "npx hardhat verify YOUR_CONTRACT 'YOUR_IPFS_URL' --network mainnet"
   },
   "keywords": [],

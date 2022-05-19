@@ -5,12 +5,14 @@ const { keccak256 } = ethers.utils;
 
 use(require('chai-as-promised'));
 
+const { BASE_URI, NOT_REVEALED_URI } = process.env;
+
 describe("UniNFT Test", function () {
   let mintedCount = 0;
   let contract;
   let tree;
-  const baseURI = 'ipfs://QmYqQgwjZiVeMaxqnRMhC3X3SsxYgTttek6TUNB5MiYnuT/';
-  const notRevealedURI = 'ipfs://QmV3Uc7JbXatJ3z8JxpgxXWvWc84jz1itd9USAYX3YN9Ee';
+  const baseURI = BASE_URI;
+  const notRevealedURI = NOT_REVEALED_URI;
 
   before(async function () {
     const UniNFT = await ethers.getContractFactory('UniNFT');

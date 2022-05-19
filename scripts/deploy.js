@@ -5,6 +5,8 @@
 // Runtime Environment's members available in the global scope.
 const hre = require('hardhat');
 
+const { BASE_URI, NOT_REVEALED_URI } = process.env;
+
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
   // line interface.
@@ -13,16 +15,12 @@ async function main() {
   // manually to make sure everything is compiled
   // await hre.run('compile');
 
-  // We get the contract to deploy
   const UniNFT = await hre.ethers.getContractFactory('UniNFT');
 
-  const baseURI = 'ipfs://QmYqQgwjZiVeMaxqnRMhC3X3SsxYgTttek6TUNB5MiYnuT/';
-  const notRevealedURI = 'ipfs://QmV3Uc7JbXatJ3z8JxpgxXWvWc84jz1itd9USAYX3YN9Ee';
-
-  // 替换成你的盲盒 ipfs 地址
+  // 真正 NFT 的 ipfs 地址以及盲盒封面 ipfs 地址
   const uninft = await UniNFT.deploy(
-    baseURI,
-    notRevealedURI
+    BASE_URI,
+    NOT_REVEALED_URI
   );
 
   await uninft.deployed();

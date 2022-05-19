@@ -1,6 +1,6 @@
 const { ethers } = require("ethers");
 const dotenv = require('dotenv');
-const ContractABI = require('./abi/UniNFT.json');
+const ContractABI = require('../artifacts/contracts/UniNFT.sol/UniNFT.json');
 
 dotenv.config();
 
@@ -33,5 +33,10 @@ const runMain = async () => {
   }
 }
 
-runMain();
+runMain()
+.then(() => process.exit(0))
+.catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
 
