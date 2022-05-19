@@ -2,7 +2,7 @@ Unicorn NFT Contract
 ===============
 ## 介绍
 
-本仓库代码是 [Unicorn NFT]() 的合约部分，仅做学习和测试使用。
+本仓库代码是 [Unicorn NFT](https://github.com/zhima/unicorn-next) 的合约部分，仅做学习和测试使用。
 
 ## 安装运行
 
