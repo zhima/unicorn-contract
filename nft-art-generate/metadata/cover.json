@@ -1,0 +1,17 @@
+{
+  "name": "Unicorn Cover",
+  "description": "A beautiful unicorn image",
+  "image": "ipfs://QmWeN75M1441HJS5uuAuzy4uFhzcynr9oWuEtno4idC86G",
+  "attributes": [
+    {
+      "display_type": "date",
+      "trait_type": "birthday",
+      "value": 1652232699.981
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Generation",
+      "value": 65536
+    }
+  ]
+}

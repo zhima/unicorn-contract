@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "generate:image": "node nft-art-generate/images/index.js",
+    "generate:metadata": "node nft-art-generate/metadata/index.js",
     "start": "npx hardhat run scripts/run.js",
     "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
     "deploy:rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby",

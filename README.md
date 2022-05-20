@@ -18,8 +18,22 @@ Unicorn NFT Contract
 npm install
 ```
 
+## 生成 NFT 图片和元数据
+本项目 NFT 图片的生成是以一个 svg 图片为基础，然后对其填充随机颜色生成的。具体的图片生成代码在 nft-arg-generate/images 目录，元数据的生成代码在 nft-arg-generate/metadata 目录。
 
-Try running some of the following tasks:
+运行以下命令生成 NFT 图片和元数据
+
+```bash
+npm run generate:image
+npm run generate:metadata
+```
+
+生成 NFT 图片和元数据后，可以通过 [pinata](https://pinata.cloud/) 上传到 ipfs 存储，这是一个分布式文件存储系统，具有一旦上传就不可改变等特性。
+
+注意上传时，要先上传 NFT 图片，然后获得上传后的 CID 填入到 metadata/index.js 的 image 字段中，然后再生成元数据文件，再上传元数据文件。
+
+
+## Hardhat 命令
 
 ```shell
 npx hardhat accounts
@@ -30,6 +44,8 @@ npx hardhat node
 npx hardhat run scripts/sample-script.js
 npx hardhat help
 ```
+
+## 从零开始需要安装的依赖
 
 Install dependencies:
 ```bash
