@@ -21,7 +21,7 @@ npm install
 ```
 
 ## 生成 NFT 图片和元数据
-本项目 NFT 图片的生成是以一个 svg 图片为基础，然后对其填充随机颜色生成的。具体的图片生成代码在 nft-arg-generate/images 目录，元数据的生成代码在 nft-arg-generate/metadata 目录。
+本项目 NFT 图片的生成是以一个 svg 图片为基础，然后对其填充随机颜色生成的。具体的图片生成代码在 nft-art-generate/images 目录，元数据的生成代码在 nft-art-generate/metadata 目录。
 
 运行以下命令生成 NFT 图片和元数据
 
