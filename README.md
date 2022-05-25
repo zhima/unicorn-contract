@@ -7,10 +7,12 @@ Unicorn NFT Contract
 ## 安装运行
 
 首先要把 .env.example 文件重命名为 .env，然后在该文件中填入需要的环境变量。
-为了方便测试，你可以使用国产良心的 ipfs 地址作为测试：
+为了方便测试，你可以使用本项目的 IPFS 地址作为测试：
 
-- 盲盒地址：ipfs://QmbyUfWA5fuedutDAJ5CPs4ujVAfhPhn2Hi1URhAPwYJM7/
-- 正式版本：ipfs://QmVYZi6XyTgC9xmZnH8Co1pEuNRUpr3WjFUpVN1N6uLstB/
+- 盲盒地址：ipfs://QmV3Uc7JbXatJ3z8JxpgxXWvWc84jz1itd9USAYX3YN9Ee
+- 正式版本：ipfs://QmYqQgwjZiVeMaxqnRMhC3X3SsxYgTttek6TUNB5MiYnuT/
+
+注意正式地址最后是有斜杠 / 的，因为这是一个目录。
 
 然后安装依赖
 
@@ -28,7 +30,7 @@ npm run generate:image
 npm run generate:metadata
 ```
 
-生成 NFT 图片和元数据后，可以通过 [pinata](https://pinata.cloud/) 上传到 ipfs 存储，这是一个分布式文件存储系统，具有一旦上传就不可改变等特性。
+生成 NFT 图片和元数据后，可以通过 [pinata](https://pinata.cloud/) 上传到 IPFS 存储，这是一个分布式文件存储系统，具有一旦上传就不可改变等特性。
 
 注意上传时，要先上传 NFT 图片，然后获得上传后的 CID 填入到 metadata/index.js 的 image 字段中，然后再生成元数据文件，再上传元数据文件。
 
