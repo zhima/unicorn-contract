@@ -21,6 +21,10 @@ module.exports = {
       url: API_URL,
       accounts: [PRIVATE_KEY],
     },
+    goerli: {
+      url: API_URL,
+      accounts: [PRIVATE_KEY],
+    },
     mainnet: {
       url: API_URL,
       accounts: [PRIVATE_KEY],

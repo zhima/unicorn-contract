@@ -9,14 +9,17 @@
     "start": "npx hardhat run scripts/run.js",
     "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
     "deploy:rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby",
+    "deploy:goerli": "npx hardhat run scripts/deploy.js --network goerli",
     "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mainnet",
     "verify:rinkeby": "npx hardhat verify CONTRACT_ADDR BASE_URI NOT_REVEALED_URI --network rinkeby",
-    "verify:mainnet": "npx hardhat verify YOUR_CONTRACT 'YOUR_IPFS_URL' --network mainnet"
+    "verify:goerli": "npx hardhat verify CONTRACT_ADDR BASE_URI NOT_REVEALED_URI --network goerli",
+    "verify:mainnet": "npx hardhat verify ‘0x1234455555555’ 'ipfs://xxxxxx/' 'ipfs://xxxxxx/' --network mainnet"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@jobinleung/hardhat-etherscan": "https://github.com/0xleung/hardhat-etherscan#v1.0.0",
     "@nomiclabs/hardhat-ethers": "^2.0.5",
     "@nomiclabs/hardhat-etherscan": "^3.0.3",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
@@ -26,9 +29,8 @@
     "erc721a": "^3.3.0",
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.5",
-    "hardhat": "^2.9.3",
-    "hardhat-gas-reporter": "^1.0.8",
-    "@jobinleung/hardhat-etherscan": "https://github.com/0xleung/hardhat-etherscan#v1.0.0"
+    "hardhat": "^2.12.5",
+    "hardhat-gas-reporter": "^1.0.8"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.6.0",
