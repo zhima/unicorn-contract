@@ -35,11 +35,11 @@ npm install
 or
 yarn install
 
-//部署到 goerli 测试网
-yarn deploy:goerli
+//部署到 sepolia 测试网
+yarn deploy:sepolia
 
 // 部署后的 etherscan 验证，这是把本地的 solidity 源代码上传到 etherscan 进行验证，注意要把 CONTRACT_ADDR、BASE_URI、NOT_REVEALED_URI 替换为对应的值，verify 成功后到 https://goerli.etherscan.io/ 输入部署的合约地址查看 Contract 一栏
-yarn verify:goerli
+yarn verify:sepolia
 ```
 
 verify 后可以运行 run.js 对合约调用方法进行验证。

@@ -1,5 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
-require('@jobinleung/hardhat-etherscan');
+require('@nomiclabs/hardhat-etherscan');
 require('hardhat-gas-reporter');
 
 const dotenv = require('dotenv');
@@ -22,6 +22,10 @@ module.exports = {
       accounts: [PRIVATE_KEY],
     },
     goerli: {
+      url: API_URL,
+      accounts: [PRIVATE_KEY],
+    },
+    sepolia: {
       url: API_URL,
       accounts: [PRIVATE_KEY],
     },

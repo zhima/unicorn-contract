@@ -10,9 +10,11 @@
     "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
     "deploy:rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby",
     "deploy:goerli": "npx hardhat run scripts/deploy.js --network goerli",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
     "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mainnet",
     "verify:rinkeby": "npx hardhat verify CONTRACT_ADDR BASE_URI NOT_REVEALED_URI --network rinkeby",
     "verify:goerli": "npx hardhat verify CONTRACT_ADDR BASE_URI NOT_REVEALED_URI --network goerli",
+    "verify:sepolia": "npx hardhat verify CONTRACT_ADDR BASE_URI NOT_REVEALED_URI --network sepolia",
     "verify:mainnet": "npx hardhat verify ‘0x1234455555555’ 'ipfs://xxxxxx/' 'ipfs://xxxxxx/' --network mainnet"
   },
   "keywords": [],
